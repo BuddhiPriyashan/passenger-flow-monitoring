@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passenger Count</title>
+</head>
+<body>
+    <h1>Get the passenger count</h1>
+    <form action="/" method="post">
+        <br>
+        <input type="submit" value="RUN">
+    </form>
+    <h2>Query Result</h2>
+    <table>
+        {% for row in result %}
+        <tr>
+            {% for column in row %}
+            <td>{{ column }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
