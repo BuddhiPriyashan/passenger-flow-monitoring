@@ -1,0 +1,16 @@
+Import Flask class
+Imort mysql.connector libraries/modules
+
+Create an instance of Flask class
+Route decorator for '/'
+    When user access root of the endpoint
+        return index.html page
+
+Route decorator when when user sends POST request from root of the endpoint
+    connet to 'passenger_flow_counts' database
+    run SELECT request against 'passenger_count_epochtime' table
+    close the database connection
+    return query result to index.html page
+
+when the script is executed directly
+    run the app and make the server publically accessible

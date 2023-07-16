@@ -1,0 +1,5 @@
+#To build an image from Dockerfile. Example image name iot/webapp:1.5
+sudo docker build -t <iot/webapp:1.5> .
+
+#Run the image:
+sudo docker run --rm -p 5000:5000 <iot/webapp:1.5>

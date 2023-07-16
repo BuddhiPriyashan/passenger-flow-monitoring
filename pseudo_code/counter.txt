@@ -1,0 +1,25 @@
+Import mysql.connector, RPi.GPIO and time libraries
+Declare global variables
+Define database configuration 
+
+update_counter()    
+        start database connection
+        increse count by one using UPDATE query in 'passenger_count_epochtime' table
+        end database connection
+
+insert_timeseries_table() 
+        start database connection
+        read the current count using a SELECT query from 'passenger_count_epochtime' table
+        INSERT query to write raw into 'passenger_count_epochtime_grafana' with current count 
+        end database connection
+
+increment_counter()
+        increase local counter by one
+        call update_counter() 
+        call insert_timeseries_table()  
+             
+main()
+        Define pin as an Input pin and use Broadcom (BCM) numbering scheme       
+        when voltage falling-edge detects in the GPIO pin:
+                call the increment_counter() callback function
+        exit if there is a Keyboard Interrupt
